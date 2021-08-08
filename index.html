@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+</head>
+<body style="font-family: cursive;  background-color: turquoise">
+	<script  type="text/javascript" >
+
+		
+$(document).ready(function(){
+ 	
+
+ 	  var firstnumber=0;
+ 	  var signused="";
+
+	  $("#b1").click(function(){
+	  	
+		var val1=  $("#T1").val()   ;
+		val1=val1 + "1";
+		$("#T1").val(val1);
+		 });
+
+		 $("#b2").click(function(){
+		var val2=  $("#T1").val()   ;
+		val2=val2 + "2";
+		$("#T1").val(val2);
+		 });
+
+		 $("#b3").click(function(){
+		var val3=  $("#T1").val()   ;
+		val3=val3 + "3";
+		$("#T1").val(val3);
+		 });
+		  $("#b4").click(function(){
+	  	
+		var val4=  $("#T1").val()   ;
+		val4=val4 + "4";
+		$("#T1").val(val4);
+		 });
+
+		 $("#b5").click(function(){
+		var val5=  $("#T1").val()   ;
+		val5=val5 + "5";
+		$("#T1").val(val5);
+		 });
+
+		 $("#b6").click(function(){
+		var val6=  $("#T1").val()   ;
+		val6=val6 + "6";
+		$("#T1").val(val6);
+		 });
+		  $("#b7").click(function(){
+		var val7=  $("#T1").val()   ;
+		val7=val7 + "7";
+		$("#T1").val(val7);
+		 });
+		  $("#b8").click(function(){
+	  	
+		var val8=  $("#T1").val()   ;
+		val8=val8 + "8";
+		$("#T1").val(val8);
+		 });
+
+		 $("#b9").click(function(){
+		var val9=  $("#T1").val()   ;
+		val9=val9 + "9";
+		$("#T1").val(val9);
+		 });
+
+		 $("#b0").click(function(){
+		var val0=  $("#T1").val()   ;
+		val0=val0 + "0";
+		$("#T1").val(val0);
+		 });
+	  	  ///alert("called");
+         /// $("p").hide(1000);
+      
+    	 // $("#T3").css("background-color", "green");
+
+ 		  $("#bplus").click(function(){
+
+
+         firstnumber= firstnumber  + parseInt( $("#T1").val()   );
+         signused="+";
+         var val2=parseInt ( $("#T2").val()  );
+         $("#T1").val("");
+    	 
+ 		 });
+
+
+
+ 		  $("#bless").click(function(){
+
+
+         firstnumber= firstnumber  - parseInt( $("#T1").val()   );
+         signused="-";
+         var val2=parseInt ( $("#T2").val()  );
+         $("#T1").val("");
+    	 
+ 		 });
+
+
+
+
+
+
+
+
+
+ 		  $("#bmul").click(function(){
+
+if(signused=='')
+{
+	firstnumber=1;
+
+}
+         firstnumber= firstnumber  * parseInt( $("#T1").val()   );
+         signused="X";
+         var val2=parseInt ( $("#T2").val()  );
+         $("#T1").val("");
+    	 
+ 		 });
+
+
+
+
+
+
+
+
+
+
+ 		  $("#bdiv").click(function(){
+
+if(signused=='')
+{
+	firstnumber=1;
+
+}
+         firstnumber= firstnumber  / parseInt( $("#T1").val()   );
+         signused="/";
+         var val2=parseInt ( $("#T2").val()  );
+         $("#T1").val("");
+    	 
+ 		 });
+
+
+
+
+		 $("#bequal").click(function(){
+debugger;
+		 	if(signused=='+')
+		 	{
+        	 	firstnumber= firstnumber  + parseInt( $("#T1").val()   );
+    		 }
+    		 else if(signused=='-')
+		 	{
+        	 	firstnumber= firstnumber  - parseInt( $("#T1").val()   );
+    		 }
+    		  else if(signused=='X')
+		 	{
+        	 	firstnumber= firstnumber  * parseInt( $("#T1").val()   );
+    		 }
+    		  else if(signused=='/')
+		 	{
+        	 	firstnumber= firstnumber  / parseInt( $("#T1").val()   );
+    		 }
+
+         signused="";
+      
+         $("#T1").val(firstnumber);
+    	 
+ 		 });
+
+
+ 		  $("#bc").click(function(){
+
+	
+
+         signused="";
+      
+         $("#T1").val('');
+    	 firstnumber=0;
+ 		 });
+ 		  
+
+
+
+
+
+	   $("#btnless").click(function(){
+	  	  
+         var val1= parseInt( $("#T1").val()   );
+         var val2=parseInt ( $("#T2").val()  );
+         var calc=val1 - val2;
+          $("#T3").val(calc);
+    	  $("#T3").css("background-color", "green");
+ 		 });
+ $("#btnmul").click(function(){
+	  	  
+         var val1= parseInt( $("#T1").val()   );
+         var val2=parseInt ( $("#T2").val()  );
+         var calc=val1 * val2;
+          $("#T3").val(calc);
+    	  $("#T3").css("background-color", "green");
+ 		 });
+  $("#btndiv").click(function(){
+	  	  
+         var val1= parseInt( $("#T1").val()   );
+         var val2=parseInt ( $("#T2").val()  );
+         var calc=val1 / val2;
+          $("#T3").val(calc);
+    	  $("#T3").css("background-color", "green");
+ 		 });
+
+	   
+
+});
+
+	</script>
+	 <form>
+     
+       <p>
+        
+          <div>
+          <input class="textbox" type = "text"
+                 id = "T1">
+             </div>
+         </p>
+         <div>
+<button class="buttoon" id="bc" type="button">C</button>
+<button class="buttoon" id="bsqr" type="button">sqr</button>
+<button class="buttoon" id="bper" type="button">%</button>
+<button class="buttoon" id="bneg" type="button">neg</button>
+</div>
+
+                 
+       
+<div>
+<button class="buttoon" id="b1" type="button">1</button>
+<button class="buttoon" id="b2" type="button">2</button>
+<button class="buttoon" id="b3" type="button">3</button>
+<button class="buttoon" id="bplus" type="button">+</button>
+
+</div>
+<div>
+<button class="buttoon" id="b4" type="button">4</button>
+<button class="buttoon" id="b5" type="button">5</button>
+<button class="buttoon" id="b6" type="button">6</button>
+<button class="buttoon" id="bless" type="button">-</button>
+
+	
+	
+</div>
+<div>
+<button class="buttoon" id="b7" type="button">7</button>
+<button class="buttoon" id="b8" type="button">8</button>
+<button class="buttoon" id="b9" type="button">9</button>
+<button class="buttoon" id="bmul" type="button">X</button>
+</div>
+<div>
+<button class="buttoon" id="b0" type="button">0</button>
+<button class="buttoon" id="bdot" type="button">.</button>
+<button class="buttoon" id="bequal" type="button">=</button>
+<button class="buttoon" id="bdiv" type="button">/</button>
+</div>
+	
+          
+		
+          
+          
+                 
+                 
+       
+          
+   
+      
+        
+                 </p>
+       
+    </fieldset>
+    </form>
+
+</body>
+</html>
